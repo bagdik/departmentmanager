@@ -1,0 +1,7 @@
+.idea/
+
+*.iml
+
+DepartmentRestAPI/target/
+
+DepartmentRestClient/target/
