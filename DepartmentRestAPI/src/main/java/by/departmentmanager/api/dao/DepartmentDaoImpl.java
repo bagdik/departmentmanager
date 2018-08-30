@@ -57,6 +57,6 @@ public class DepartmentDaoImpl implements DepartmentDao {
     public int createDepartment(Department department) {
         int count = jdbcTemplate.update("INSERT INTO department(dep_id, dep_name) VALUES(?, ?)",
                 new Object[]{department.getDepId(), department.getDepName()});
-        return 0;
+        return count;
     }
 }
