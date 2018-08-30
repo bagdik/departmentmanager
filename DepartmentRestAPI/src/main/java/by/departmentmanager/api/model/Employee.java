@@ -10,7 +10,7 @@ public class Employee {
     private String secondname;
     private String firstname;
     private String patronymic;
-    private Date birthdate;
+    private String birthdate;
     private Double salary;
 
     public Employee() {
@@ -48,11 +48,11 @@ public class Employee {
         this.patronymic = patronymic;
     }
 
-    public Date getBirthdate() {
+    public String getBirthdate() {
         return birthdate;
     }
 
-    public void setBirthdate(Date birthdate) {
+    public void setBirthdate(String birthdate) {
         this.birthdate = birthdate;
     }
 

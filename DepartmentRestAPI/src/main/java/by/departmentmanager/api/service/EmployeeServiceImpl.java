@@ -21,21 +21,22 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public Employee getEmployee(Long empId) {
-        return null;
+        Employee employee = employeeDao.getEmployee(empId);
+        return employee;
     }
 
     @Override
     public int deleteEmployee(Long empId) {
-        return 0;
+        return employeeDao.deleteEmployee(empId);
     }
 
     @Override
     public int updateEmployee(Employee employee) {
-        return 0;
+        return employeeDao.updateEmployee(employee);
     }
 
     @Override
     public int createEmployee(Employee employee) {
-        return 0;
+        return employeeDao.createEmployee(employee);
     }
 }
