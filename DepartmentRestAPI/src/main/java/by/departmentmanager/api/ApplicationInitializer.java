@@ -16,6 +16,8 @@ public class ApplicationInitializer implements WebApplicationInitializer {
         ctx.register(ApplicationConfig.class);
         ctx.setServletContext(servletContext);
 
+        ctx.getEnvironment().setActiveProfiles("live");
+
         ServletRegistration.Dynamic servlet = servletContext.addServlet("dispatcher", new DispatcherServlet(ctx));
 
         servlet.setLoadOnStartup(1);

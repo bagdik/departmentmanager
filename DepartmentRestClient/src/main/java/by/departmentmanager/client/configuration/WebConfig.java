@@ -1,18 +1,16 @@
-package by.departmentmanager.api.configuration;
-
+package by.departmentmanager.client.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
-@ComponentScan(basePackages = "by.departmentmanager.api")
+@ComponentScan(basePackages = "by.departmentmanager.client")
 @EnableWebMvc
-public class ApplicationConfig implements WebMvcConfigurer {
+public class WebConfig implements WebMvcConfigurer {
     @Bean
     public InternalResourceViewResolver viewResolver() {
         InternalResourceViewResolver resolver = new InternalResourceViewResolver();
@@ -21,8 +19,4 @@ public class ApplicationConfig implements WebMvcConfigurer {
         return resolver;
     }
 
-    @Bean
-    public RestTemplate template() {
-        return new RestTemplate();
-    }
 }

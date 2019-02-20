@@ -1,6 +1,7 @@
 package by.departmentmanager.api.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Date;
 
@@ -12,6 +13,15 @@ public class Employee {
     private String patronymic;
     private String birthdate;
     private Double salary;
+    private Long department_dep_id;
+
+    public Long getDepartment_dep_id() {
+        return department_dep_id;
+    }
+
+    public void setDepartment_dep_id(Long department_dep_id) {
+        this.department_dep_id = department_dep_id;
+    }
 
     public Employee() {
     }
@@ -71,8 +81,9 @@ public class Employee {
                 ", secondname='" + secondname + '\'' +
                 ", firstname='" + firstname + '\'' +
                 ", patronymic='" + patronymic + '\'' +
-                ", birthdate=" + birthdate +
+                ", birthdate='" + birthdate + '\'' +
                 ", salary=" + salary +
+                ", depId=" + department_dep_id +
                 '}';
     }
 }

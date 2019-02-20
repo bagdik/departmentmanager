@@ -5,6 +5,7 @@ import by.departmentmanager.api.model.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 @Service("employeeService")
@@ -36,7 +37,23 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public int createEmployee(Employee employee) {
-        return employeeDao.createEmployee(employee);
+    public int createEmployee(Employee employee, Long depId) {
+        return employeeDao.createEmployee(employee, depId);
+    }
+
+    @Override
+    public List<Employee> getEmployeesBeDepartment(Long depId) {
+        List<Employee> employees = employeeDao.getEmployeesByDepartment(depId);
+        return employees;
+    }
+
+    @Override
+    public List<Employee> getEmployeesByBirthdate(String birthdate) {
+        return employeeDao.getEmployeesByBirthdate(birthdate);
+    }
+
+    @Override
+    public List<Employee> getEmployeesByBirthperiod(String dateFrom, String dateTo) {
+        return employeeDao.getEmployeesByBirthperiod(dateFrom, dateTo);
     }
 }

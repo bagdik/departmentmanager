@@ -28,7 +28,7 @@ public class DepartmentController {
     }
 
     @GetMapping(value = "/department/{id}")
-    public ResponseEntity<Department> getEmployee(@PathVariable("id") Long depId) {
+    public ResponseEntity<Department> getDepartment(@PathVariable("id") Long depId) {
         Department department = departmentService.getDepartment(depId);
         if (department == null) {
             return new ResponseEntity<Department>(HttpStatus.NOT_FOUND);
@@ -36,7 +36,7 @@ public class DepartmentController {
         return new ResponseEntity<Department>(department, HttpStatus.OK);
     }
 
-    @DeleteMapping(value = "/department/delete/{id}")
+    @DeleteMapping(value = "/department/{id}")
     public ResponseEntity<Department> deleteDepartment(@PathVariable("id") Long depId){
         HttpHeaders headers = new HttpHeaders();
         Department department = departmentService.getDepartment(depId);

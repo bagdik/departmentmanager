@@ -1,10 +1,7 @@
 package by.departmentmanager.api.configuration;
 
 import org.apache.commons.dbcp.BasicDataSource;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.*;
 import org.springframework.core.env.Environment;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
@@ -16,6 +13,7 @@ import javax.sql.DataSource;
 @EnableTransactionManagement
 @PropertySource("classpath:jdbc.properties")
 @ComponentScan(basePackages = "by.departmentmanager.api")
+@Profile("dev")
 public class DatabaseConfig {
 
     @Resource

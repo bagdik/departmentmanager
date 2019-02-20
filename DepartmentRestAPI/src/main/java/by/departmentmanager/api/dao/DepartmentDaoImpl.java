@@ -23,7 +23,7 @@ public class DepartmentDaoImpl implements DepartmentDao {
     public List<Department> getDepartments() {
         List<Department> departments = null;
         try{
-            departments = jdbcTemplate.query("SELECT * FROM department",
+            departments = jdbcTemplate.query("SELECT *, (SELECT AVG(employee.salary) FROM employee WHERE dep_id = department_dep_id) AS avgsalary FROM department",
                     new BeanPropertyRowMapper<Department>(Department.class));
         } catch (DataAccessException e){
             e.printStackTrace();
@@ -35,7 +35,7 @@ public class DepartmentDaoImpl implements DepartmentDao {
     public Department getDepartment(Long depId) {
         Department department = null;
         try{
-            department = jdbcTemplate.queryForObject("SELECT * FROM department WHERE dep_id = ?",
+            department = jdbcTemplate.queryForObject("SELECT *, (SELECT AVG(employee.salary) FROM employee WHERE dep_id = department_dep_id) AS avgsalary FROM department WHERE dep_id = ?",
                     new Object[] {depId}, new BeanPropertyRowMapper<Department>(Department.class));
         } catch (DataAccessException e){
             e.printStackTrace();
@@ -55,8 +55,8 @@ public class DepartmentDaoImpl implements DepartmentDao {
     }
 
     public int createDepartment(Department department) {
-        int count = jdbcTemplate.update("INSERT INTO department(dep_id, dep_name) VALUES(?, ?)",
-                new Object[]{department.getDepId(), department.getDepName()});
+        int count = count = jdbcTemplate.update("INSERT INTO department(dep_name) VALUES(?)",
+                new Object[]{department.getDepName()});
         return count;
     }
 }

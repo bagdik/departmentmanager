@@ -32,6 +32,10 @@ public class DepartmentServiceImpl implements DepartmentService{
     }
 
     public int createDepartment(Department department) {
-        return departmentDao.createDepartment(department);
+        int count = -1;
+        if(department != null){
+            count = departmentDao.createDepartment(department);
+        }
+        return count;
     }
 }
