@@ -1,0 +1,26 @@
+d{yyyy-MM-dd HH:mm:ss} INFO  [RMI TCP Connection(7)-127.0.0.1]: 
+
+d{yyyy-MM-dd HH:mm:ss} INFO  [RMI TCP Connection(7)-127.0.0.1]: 
+
+d{yyyy-MM-dd HH:mm:ss} INFO  [RMI TCP Connection(3)-127.0.0.1]: 
+
+d{yyyy-MM-dd HH:mm:ss} INFO  [RMI TCP Connection(3)-127.0.0.1]: 
+
+d{yyyy-MM-dd HH:mm:ss} INFO  [RMI TCP Connection(5)-127.0.0.1]: 
+
+d{yyyy-MM-dd HH:mm:ss} INFO  [RMI TCP Connection(5)-127.0.0.1]: 
+
+d{yyyy-MM-dd HH:mm:ss} INFO  [RMI TCP Connection(5)-127.0.0.1]: 
+
+2019-03-01 12:42:22 INFO  [RMI TCP Connection(3)-127.0.0.1]: 
+
+2019-03-01 12:42:25 INFO  [RMI TCP Connection(3)-127.0.0.1]: 
+
+2019-03-01 12:42:25 INFO  [RMI TCP Connection(3)-127.0.0.1]: 
+
+12:45:09,328  INFO RMI TCP Connection(3)-127.0.0.1 DatabaseConfigH2:dataSource:21 - Bean dataSource was created
+12:45:11,978  INFO RMI TCP Connection(3)-127.0.0.1 ApplicationConfig:viewResolver:24 - ViewResolver was created
+12:45:12,008  INFO RMI TCP Connection(3)-127.0.0.1 ApplicationConfig:template:30 - RestTemplate was created
+2019-03-01 12:52:29  INFO RMI TCP Connection(3)-127.0.0.1 DatabaseConfigH2:dataSource:21 - Bean dataSource was created
+2019-03-01 12:52:32  INFO RMI TCP Connection(3)-127.0.0.1 ApplicationConfig:viewResolver:24 - ViewResolver was created
+2019-03-01 12:52:32  INFO RMI TCP Connection(3)-127.0.0.1 ApplicationConfig:template:30 - RestTemplate was created

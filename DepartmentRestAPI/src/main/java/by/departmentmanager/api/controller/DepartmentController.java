@@ -2,6 +2,7 @@ package by.departmentmanager.api.controller;
 
 import by.departmentmanager.api.model.Department;
 import by.departmentmanager.api.service.DepartmentService;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -13,6 +14,8 @@ import java.util.List;
 @RestController
 public class DepartmentController {
 
+    private static final Logger logger = Logger.getLogger(DepartmentController.class);
+
     @Autowired
     private DepartmentService departmentService;
 
@@ -20,6 +23,7 @@ public class DepartmentController {
     public ResponseEntity<List<Department>> getDepartments(){
         HttpHeaders httpHeaders = new HttpHeaders();
         List<Department> departments = departmentService.getDepartments();
+        logger.info("Bean departmentService has been autowired");
         if(departments == null){
             return new ResponseEntity<List<Department>>(HttpStatus.NOT_FOUND);
         }
